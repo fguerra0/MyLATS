@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "1040646578937",
+    "firebase_url": "https://mylats-bd2d8.firebaseio.com",
+    "project_id": "mylats-bd2d8",
+    "storage_bucket": "mylats-bd2d8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1040646578937:android:fc5a398a739d861d",
+        "android_client_info": {
+          "package_name": "com.example.mylats"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1040646578937-egbgvlda6sq4633pravbboskp0bsp9fq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBrpro6SVa32pGf3RBZYt19GkR2xsoD9bE"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
