@@ -15,6 +15,14 @@
       },
       "oauth_client": [
         {
+          "client_id": "1040646578937-eoboq82v2dotbp9m33ble78si9epp9em.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.mylats",
+            "certificate_hash": "3febaee20d65eec479c4297d006c251e48170e5a"
+          }
+        },
+        {
           "client_id": "1040646578937-egbgvlda6sq4633pravbboskp0bsp9fq.apps.googleusercontent.com",
           "client_type": 3
         }
@@ -29,8 +37,13 @@
           "status": 1
         },
         "appinvite_service": {
-          "status": 1,
-          "other_platform_oauth_client": []
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1040646578937-egbgvlda6sq4633pravbboskp0bsp9fq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
         },
         "ads_service": {
           "status": 2
