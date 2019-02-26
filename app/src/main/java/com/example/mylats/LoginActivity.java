@@ -39,33 +39,30 @@ public class LoginActivity extends AppCompatActivity
             {
                 String email = user_email.getText().toString();
                 String password = user_password.getText().toString();
-                if(TextUtils.isEmpty(email))
+                if(TextUtils.isEmpty(email) || TextUtils.isEmpty(password))
                 {
                     Toast.makeText(getApplicationContext(), "Please fill in the required fields", Toast.LENGTH_SHORT).show();
                     return;
                 }
-                if(TextUtils.isEmpty(password))
-                {
-                    Toast.makeText(getApplicationContext(), "Please fill in the required fields", Toast.LENGTH_SHORT).show();
-                }
                 if(password.length() < 6)
                 {
                     Toast.makeText(getApplicationContext(), "Password needs to be at least 6 characters", Toast.LENGTH_SHORT).show();
+                    return;
                 }
-
                 firebaseAuth.createUserWithEmailAndPassword(email, password)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>()
                         {
                             @Override
-                            public void onComplete(@NonNull Task<AuthResult> task)
-                            {
-                                if(task.isSuccessful())
-                                {
-                                    startActivity(new Intent(getApplicationContext(), MainActivity.class));
-                                    finish();
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                try {
+                                    if (task.isSuccessful()) {
+                                        finish();
+                                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                                    } else
+                                        Toast.makeText(getApplicationContext(), "Email or password is wrong", Toast.LENGTH_SHORT).show();
+                                } catch (Exception e) {
+                                    e.printStackTrace();
                                 }
-                                else
-                                    Toast.makeText(getApplicationContext(), "Email or password is wrong", Toast.LENGTH_SHORT).show();
                             }
                         });
             }
@@ -75,7 +72,7 @@ public class LoginActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                startActivity(new Intent(getApplicationContext(), LoginActivity.class));
+                startActivity(new Intent(getApplicationContext(), AlreadyActivity.class));
             }
         });
         if(firebaseAuth.getCurrentUser() != null)

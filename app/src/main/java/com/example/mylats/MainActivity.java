@@ -8,7 +8,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
-
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
@@ -19,41 +18,32 @@ public class MainActivity extends AppCompatActivity
     TextView textView;
     Button btnDeleteUser,btnLogout;
     FirebaseAuth firebaseAuth;
-    private FirebaseAuth.AuthStateListener  authStateListener;
+    FirebaseUser user;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState)
+    {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         textView = findViewById(R.id.textView1);
-        btnDeleteUser =findViewById(R.id.kullaniciSil);
-        btnLogout = findViewById(R.id.cikis_yap);
+        btnDeleteUser =findViewById(R.id.deleteUser);
+        btnLogout = findViewById(R.id.logout);
 
         firebaseAuth = FirebaseAuth.getInstance();
+        user = firebaseAuth.getCurrentUser();
 
-        authStateListener = new FirebaseAuth.AuthStateListener()
+        if(user != null)
         {
-            @Override
-            public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth)
-            {
-                FirebaseUser user = firebaseAuth.getCurrentUser();
-                if(user == null)
-                {
-                    startActivity(new Intent(getApplicationContext(), LoginActivity.class));
-                    finish();
-                }
-            }
-        };
-
-        final FirebaseUser user  = firebaseAuth.getCurrentUser();
-        textView.setText("Hi " + user.getDisplayName());
+            String Email = user.getEmail();
+            textView.setText("Hi " + Email);
+        }
 
         btnDeleteUser.setOnClickListener(new View.OnClickListener()
         {
             @Override
             public void onClick(View v)
             {
-                if(user!=null){
+                if(user != null){
                     user.delete()
                             .addOnCompleteListener(new OnCompleteListener<Void>()
                             {
@@ -83,21 +73,5 @@ public class MainActivity extends AppCompatActivity
         });
 
 
-    }
-
-    @Override
-    protected void onStart()
-    {
-        super.onStart();
-        firebaseAuth.addAuthStateListener(authStateListener);
-    }
-
-    @Override
-    protected void onStop()
-    {
-        super.onStop();
-        if(authStateListener!=null){
-            firebaseAuth.removeAuthStateListener(authStateListener);
-        }
     }
 }

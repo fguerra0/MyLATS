@@ -8,28 +8,29 @@
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:id="@+id/textView1"
+        android:text="@string/greeting"
         android:textColor="@color/colorAccent"
         android:textStyle="bold"
         android:layout_marginTop="100dp"
         android:textAlignment="center" />
 
     <Button
-        android:id="@+id/kullaniciSil"
+        android:id="@+id/deleteUser"
         style="?android:textAppearanceSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Delete User"
+        android:text="@string/deleteUser"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:background="@android:color/holo_blue_bright"/>
     <Button
-        android:id="@+id/cikis_yap"
+        android:id="@+id/logout"
         style="?android:textAppearanceSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Logout"
+        android:text="@string/logout"
         android:textColor="@android:color/white"
         android:textStyle="bold"
         android:background="@color/colorAccent"/>
