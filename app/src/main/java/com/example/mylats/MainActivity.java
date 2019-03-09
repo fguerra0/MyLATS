@@ -16,7 +16,7 @@ import com.google.firebase.auth.FirebaseUser;
 public class MainActivity extends AppCompatActivity
 {
     TextView textView;
-    Button btnDeleteUser,btnLogout;
+    Button btnDeleteUser, btnLogout, btnBluetooth;
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
 
@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity
         textView = findViewById(R.id.textView1);
         btnDeleteUser =findViewById(R.id.deleteUser);
         btnLogout = findViewById(R.id.logout);
+        btnBluetooth = findViewById(R.id.connect);
 
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
@@ -68,6 +69,16 @@ public class MainActivity extends AppCompatActivity
             {
                 firebaseAuth.signOut();
                 startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                finish();
+            }
+        });
+
+        btnBluetooth.setOnClickListener(new View.OnClickListener()
+        {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(getApplicationContext(), ConnectActivity.class));
                 finish();
             }
         });
