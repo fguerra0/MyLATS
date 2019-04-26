@@ -1,51 +1,24 @@
-<?xml version="1.0" encoding="utf-8"?>
-<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".HeartSensor">
+    android:orientation="vertical">
 
-    <android.support.design.widget.AppBarLayout
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
+    <ListView
+        android:paddingTop="8dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:theme="@style/AppTheme.AppBarOverlay">
+        android:id="@+id/devicesListView"
+        android:visibility="visible" />
 
-        <android.support.v7.widget.Toolbar
-            android:id="@+id/toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            android:background="?attr/colorPrimary"
-            app:popupTheme="@style/AppTheme.PopupOverlay" />
-
-    </android.support.design.widget.AppBarLayout>
-
-    <include layout="@layout/content_heart_sensor" />
-
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab"
+    <ProgressBar
+        android:id="@+id/progress_bar"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_menu_revert" />
+        android:layout_height="match_parent"
+        android:layout_gravity="center"
+        android:visibility="gone" />
 
-    <TextView
-        android:id="@+id/dev_type"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="Name"
-        android:textAlignment="viewStart"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:textSize="36sp" />
-
-    <TextView
-        android:id="@+id/value_read"
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:text="Value"
-        android:textAlignment="textEnd"
-        android:textAppearance="@style/TextAppearance.AppCompat.Button"
-        android:textSize="36sp" />
-
-</android.support.design.widget.CoordinatorLayout>
+</LinearLayout>

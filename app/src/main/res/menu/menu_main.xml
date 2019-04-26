@@ -1,0 +1,19 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="com.example.heartsensortest.MainActivity">
+
+    <item
+        android:id="@+id/menu_scan"
+        android:icon="@drawable/ic_bluetooth_searching_white_24dp"
+        android:orderInCategory="200"
+        android:title="@string/menu_scan"
+        app:showAsAction="always" />
+
+    <item
+        android:id="@+id/menu_stop"
+        android:icon="@drawable/ic_stop_white_24dp"
+        android:orderInCategory="200"
+        android:title="@string/menu_stop"
+        app:showAsAction="always" />
+</menu>
