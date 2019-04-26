@@ -78,7 +78,7 @@ public class MainActivity extends AppCompatActivity
             @Override
             public void onClick(View v)
             {
-                startActivity(new Intent(getApplicationContext(), ConnectActivity.class));
+                startActivity(new Intent(getApplicationContext(), HeartSensor.class));
                 finish();
             }
         });

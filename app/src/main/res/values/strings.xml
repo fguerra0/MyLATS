@@ -15,4 +15,5 @@
     <string name="greeting">Hi </string>
     <string name="logout">Logout</string>
     <string name="deleteUser">Delete User</string>
+    <string name="title_activity_heart_sensor">HeartSensor</string>
 </resources>

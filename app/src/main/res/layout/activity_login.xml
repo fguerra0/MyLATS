@@ -14,6 +14,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:inputType="textEmailAddress"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:hint="@string/prompt_email"
             android:id="@+id/userEmail"
             />
@@ -30,6 +33,8 @@
             android:ems="10"
             android:inputType="textPassword"
             android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_marginRight="40dp"
             android:id="@+id/userPassword"
             android:hint="@string/prompt_password" />
 
