@@ -43,6 +43,7 @@ public class HeartSensor extends AppCompatActivity
 
     private static final int REQUEST_ENABLE_BT = 1;
     private static final long SCAN_PERIOD = 10000;
+    public static String EXTRA_DEVICE_ADDRESS = "device_address";
 
     public ScanCallback callback =
             new ScanCallback() {
@@ -173,7 +174,7 @@ public class HeartSensor extends AppCompatActivity
                 intent.putExtra(DeviceActivity.EXTRAS_DEVICE_ADDRESS, bluetoothDevice.getAddress());
                 if(scanning)
                 {
-                    bluetoothLeScanner.stopScan((ScanCallback) callback);
+                    bluetoothLeScanner.stopScan(callback);
                     scanning = false;
                 }
                 startActivity(intent);
@@ -225,13 +226,13 @@ public class HeartSensor extends AppCompatActivity
 
         public DeviceListAdapter() {
             super();
-            devicesList = new ArrayList<BluetoothDevice>();
+            devicesList = new ArrayList<>();
             inflater = HeartSensor.this.getLayoutInflater();
         }
 
         public DeviceListAdapter(ArrayList<BluetoothDevice> list) {
             super();
-            devicesList = new ArrayList<BluetoothDevice>(list);
+            devicesList = new ArrayList<>(list);
             inflater = HeartSensor.this.getLayoutInflater();
         }
 
@@ -240,7 +241,7 @@ public class HeartSensor extends AppCompatActivity
                 devicesList.add(device);
         }
 
-        public ArrayList getDevicesList() {
+        public ArrayList<BluetoothDevice> getDevicesList() {
             return devicesList;
         }
 

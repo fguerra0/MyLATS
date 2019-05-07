@@ -15,8 +15,9 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity
 {
+    android.support.v7.widget.Toolbar toolbar;
     TextView textView;
-    Button btnDeleteUser, btnLogout, btnBluetooth;
+    Button btnDeleteUser, btnLogout, btnBluetooth, btnArduino, btnInfo;
     FirebaseAuth firebaseAuth;
     FirebaseUser user;
 
@@ -29,6 +30,10 @@ public class MainActivity extends AppCompatActivity
         btnDeleteUser =findViewById(R.id.deleteUser);
         btnLogout = findViewById(R.id.logout);
         btnBluetooth = findViewById(R.id.connect);
+        btnArduino = findViewById(R.id.arduino);
+        btnInfo = findViewById(R.id.personal);
+        toolbar = findViewById(R.id.app_bar);
+        setSupportActionBar(toolbar);
 
         firebaseAuth = FirebaseAuth.getInstance();
         user = firebaseAuth.getCurrentUser();
@@ -83,6 +88,20 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+        btnArduino.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), ArduinoScreen.class));
+                finish();
+            }
+        });
+
+        btnInfo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(getApplicationContext(), PersonalInfo.class));
+            }
+        });
 
     }
 }

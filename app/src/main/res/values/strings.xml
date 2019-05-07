@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">MyLATS</string>
-    <!-- Strings related to login -->
     <string name="prompt_email">Email</string>
     <string name="prompt_password">Password</string>
     <string name="action_sign_in">Sign in or register</string>
@@ -9,8 +8,7 @@
     <string name="error_invalid_password">This password is too short</string>
     <string name="error_incorrect_password">This password is incorrect</string>
     <string name="error_field_required">This field is required</string>
-    <string name="permission_rationale">"Contacts permissions are needed for providing email
-        completions."</string>
+    <string name="permission_rationale">"Contacts permissions are needed for providing email completions."</string>
     <string name="greeting">Hi </string>
     <string name="logout">Logout</string>
     <string name="deleteUser">Delete User</string>
@@ -32,4 +30,17 @@
     <string name="label_data">Data:</string>
     <string name="menu_connect">Connect</string>
     <string name="menu_disconnect">Disconnect</string>
+    <string name="user_info_form_title"> PERSONAL INFORMATION </string>
+    <string name="user_info_form_name"> PERSONAL NAME </string>
+    <string name="user_info_form_email"> PERSONAL EMAIL </string>
+    <string name="user_info_form_weight"> WEIGHT </string>
+    <string name="user_info_form_age"> AGE </string>
+    <string name="genderSex">Sex</string>
+    <string name="genderM">Male</string>
+    <string name="genderF">Female</string>
+    <string name="GenderType">Select Gender</string>
+    <string name="Infobutton">Add Information</string>
+    <string name="ReturnMain">Return to Main Menu</string>
+    <string name="title_activity_personal_info">personal_info</string>
+
 </resources>

@@ -4,15 +4,46 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <include
+        android:id="@+id/app_bar"
+        layout="@layout/app_bar" />
+
     <TextView
+        android:id="@+id/textView1"
         android:layout_width="match_parent"
         android:layout_height="40dp"
-        android:id="@+id/textView1"
+        android:layout_marginTop="40dp"
         android:text="@string/greeting"
+        android:textAlignment="center"
         android:textColor="@color/colorAccent"
-        android:textStyle="bold"
-        android:layout_marginTop="100dp"
-        android:textAlignment="center" />
+        android:textSize="12pt"
+        android:textStyle="italic" />
+
+    <Button
+        android:id="@+id/connect"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="40dp"
+        android:background="@android:color/holo_blue_dark"
+        android:text="Connect Your TICKR"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/logout"
+        style="?android:textAppearanceSmall"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="40dp"
+        android:background="@color/colorAccent"
+        android:text="@string/logout"
+        android:textColor="@android:color/white"
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/deleteUser"
@@ -28,29 +59,36 @@
         android:background="@android:color/holo_blue_bright"/>
 
     <Button
-        android:id="@+id/logout"
+        android:id="@+id/arduino"
         style="?android:textAppearanceSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:text="@string/logout"
+        android:text="Begin Your Workout"
         android:textColor="@android:color/white"
         android:textStyle="bold"
-        android:background="@color/colorAccent"/>
+        android:background="@android:color/holo_red_dark"/>
 
     <Button
-        android:id="@+id/connect"
+        android:id="@+id/personal"
         style="?android:textAppearanceSmall"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginLeft="40dp"
         android:layout_marginRight="40dp"
-        android:text="Connect Your Device"
+        android:text="Personal Information"
         android:textColor="@android:color/white"
         android:textStyle="bold"
-        android:background="@android:color/holo_blue_dark"/>
+        android:background="@android:color/holo_green_dark" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:srcCompat="@mipmap/ic_launcher_192" />
 
 </LinearLayout>

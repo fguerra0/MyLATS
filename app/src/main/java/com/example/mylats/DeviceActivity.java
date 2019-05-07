@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.SimpleExpandableListAdapter;
 import android.widget.ExpandableListView;
 import android.widget.TextView;
@@ -41,6 +42,7 @@ public class DeviceActivity extends AppCompatActivity
     private BluetoothGattCharacteristic notify;
     private final String LIST_NAME = "NAME";
     private final String LIST_UUID = "UUID";
+    Button btnBack;
 
     private final ServiceConnection serviceConnectionBluetooth = new ServiceConnection() {
         @Override
@@ -133,6 +135,7 @@ public class DeviceActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.gatt_services_characteristics);
         toolbar = findViewById(R.id.app_bar);
+        btnBack = findViewById(R.id.back_button);
         setSupportActionBar(toolbar);
         getSupportActionBar().setHomeButtonEnabled(true);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
@@ -149,6 +152,15 @@ public class DeviceActivity extends AppCompatActivity
         dataField = findViewById(R.id.data_value);
         Intent gattService = new Intent(this, BluetoothLeService.class);
         bindService(gattService, serviceConnectionBluetooth, BIND_AUTO_CREATE);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                finish();
+            }
+        });
     }
 
     @Override
